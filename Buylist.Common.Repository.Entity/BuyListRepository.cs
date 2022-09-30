@@ -16,32 +16,39 @@ namespace Buylist.Common.Repository.Entity
 
         public List<TEntity> All()
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().ToList();
         }
 
         public TEntity ByKey(TKey key)
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().Find(key);
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            if(entity != null)
+            {
+                _context.Entry(entity).State = EntityState.Deleted;
+                _context.SaveChanges();
+            }
         }
 
         public void DeleteByKey(TKey key)
         {
-            throw new NotImplementedException();
+            TEntity entity = ByKey(key);
+            Delete(entity);
         }
 
         public void Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Set<TEntity>().Add(entity);
+            _context.SaveChanges();
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

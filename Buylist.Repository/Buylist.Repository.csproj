@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Buylist.Common.Repository.Entity\Buylist.Common.Repository.Entity.csproj" />
+    <ProjectReference Include="..\Buylist.Domain\Buylist.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
