@@ -10,7 +10,7 @@ namespace Buylist.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProdutoController : ControllerBase
+    public class ProdutosController : ControllerBase
     {
         private IBuyListRepository <Produto, int> _repository = new ProdutoRepository(new BuylistContext());
 
