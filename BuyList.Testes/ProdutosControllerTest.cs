@@ -8,13 +8,13 @@ namespace BuyList.Testes
 {
     public class ProdutosControllerTest
     {
-        ProdutoController _controller;
+        ProdutosController _controller;
         IBuyListRepository<Produto, int> _servico;
 
         public  ProdutosControllerTest()
         {
             _servico = new ProdutoFake();
-            _controller = new ProdutoController(_servico);
+            _controller = new ProdutosController(_servico);
         }
 
 
