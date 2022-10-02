@@ -4,38 +4,37 @@ using Buylist.Domain;
 using Buylist.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol.Core.Types;
 
 namespace Buylist.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItensController : ControllerBase
-    {
-
-        private IBuyListRepository<Item, int> _repository = new ItemRepository(new BuylistContext());
-        private IBuyListRepository<Produto, int> _repositoryProduto = new ProdutoRepository(new BuylistContext());
+    public class LocaisController : ControllerBase 
+    { 
+        private IBuyListRepository<Local, int> _repository = new LocalRepository(new BuylistContext());
 
         [HttpGet]
-        public IEnumerable<Item> Get()
+        public IEnumerable<Local> Get()
         {
             return _repository.All();
         }
 
         [HttpGet("{id}")]
-        public Item Get(int id)
+        public Local Get(int id)
         {
             return _repository.ByKey(id);
         }
 
         [HttpPost]
-        public void Post([FromBody] Item value)
+        public void Post([FromBody] Local value)
         {
             _repository.Insert(value);
         }
 
         // PUT api/<ProdutoController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Item value)
+        public void Put(int id, [FromBody] Local value)
         {
             _repository.Update(value);
         }

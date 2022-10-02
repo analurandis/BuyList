@@ -8,9 +8,12 @@ namespace Buylist.Domain
 {
     public class Local
     {
-        public int Id { get; set; }
+        public int LocalId { get; set; }
         public string Nome { get; set; }
         public string? Localizacao { get; set; }
 
+        public virtual ICollection<Compra>? Compras { get; set; }
     }
+
 }
+

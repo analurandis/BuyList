@@ -14,7 +14,7 @@ namespace Buylist.DataAccess.TypeConfigurations
     {
         public void Configure(EntityTypeBuilder<Compra> builder)
         {
-            builder.Property(b => b.Id)
+            builder.Property(b => b.CompraId)
                 .IsRequired()
                 .ValueGeneratedOnAdd();
             builder.Property(b => b.Descricao)
