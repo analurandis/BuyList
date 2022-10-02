@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Buylist.Domain
 {
-    public class Produto
+    public class Produto : Base
     {
-        public int ProdutoId { get; set; }
         public string? Nome {get;set;}   
         public string? CodigoBarras {get;set;}
         public string? Descricao { get; set; }

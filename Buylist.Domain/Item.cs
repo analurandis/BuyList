@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Buylist.Domain
 {
-    public class Item
+    public class Item : Base
     {
-        public int ItemId { get; set; }
         public decimal Valor { get; set; }
         public int Quantidade { get; set; }
         public decimal Total { get; set; }

@@ -1,12 +1,12 @@
 ﻿namespace Buylist.Domain
 {
-    public class Compra
+    public class Compra : Base
     {
         public Compra()
         {
             Itens = new List<Item>();
         }
-        public int CompraId { get; set; }
+       
         public string? Descricao { get; set; }
         public DateTime Data { get; set; }
         public bool Finalizada { get; set; }

@@ -4,6 +4,7 @@ using Buylist.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buylist.DataAccess.Migrations
 {
     [DbContext(typeof(BuylistContext))]
-    partial class BuylistContextModelSnapshot : ModelSnapshot
+    [Migration("20221002200330_MigrationRelacionamentos3")]
+    partial class MigrationRelacionamentos3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

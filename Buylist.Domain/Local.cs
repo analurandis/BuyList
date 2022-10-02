@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Buylist.Domain
 {
-    public class Local
+    public class Local : Base
     {
-        public int LocalId { get; set; }
         public string Nome { get; set; }
         public string? Localizacao { get; set; }
 
