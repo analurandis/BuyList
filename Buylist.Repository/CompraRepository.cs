@@ -11,7 +11,5 @@ namespace Buylist.Repository
         {
             _context = dbContext;
         }
-
-
     }
 }

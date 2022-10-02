@@ -4,6 +4,7 @@ using Buylist.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buylist.DataAccess.Migrations
 {
     [DbContext(typeof(BuylistContext))]
-    partial class BuylistContextModelSnapshot : ModelSnapshot
+    [Migration("20221002180952_MigrationRelacionamentos")]
+    partial class MigrationRelacionamentos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,7 +62,7 @@ namespace Buylist.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CompraId")
+                    b.Property<int?>("CompraId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProdutoId")
@@ -141,19 +143,15 @@ namespace Buylist.DataAccess.Migrations
 
             modelBuilder.Entity("Buylist.Domain.Item", b =>
                 {
-                    b.HasOne("Buylist.Domain.Compra", "Compra")
+                    b.HasOne("Buylist.Domain.Compra", null)
                         .WithMany("Itens")
-                        .HasForeignKey("CompraId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CompraId");
 
                     b.HasOne("Buylist.Domain.Produto", "Produto")
                         .WithMany("Itens")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Compra");
 
                     b.Navigation("Produto");
                 });
