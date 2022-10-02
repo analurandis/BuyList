@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Buylist.Repository
 {
-    public  class ProdutoRepository : BuyListRepository<Produto, int>
+    public  class LocalRepository : BuyListRepository<Local, int>
     {
         private DbContext _context;
-        public ProdutoRepository(DbContext dbContext) : base(dbContext)
+        public LocalRepository(DbContext dbContext) : base(dbContext)
         {
             _context = dbContext;
         }

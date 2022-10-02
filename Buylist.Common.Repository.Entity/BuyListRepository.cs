@@ -7,7 +7,7 @@ namespace Buylist.Common.Repository.Entity
         where TEntity : class
     {
 
-        private DbContext _context;
+        private readonly DbContext _context;
 
         public BuyListRepository(DbContext dbContext)
         {

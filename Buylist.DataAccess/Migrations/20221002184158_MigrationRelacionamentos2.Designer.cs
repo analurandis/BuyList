@@ -4,6 +4,7 @@ using Buylist.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buylist.DataAccess.Migrations
 {
     [DbContext(typeof(BuylistContext))]
-    partial class BuylistContextModelSnapshot : ModelSnapshot
+    [Migration("20221002184158_MigrationRelacionamentos2")]
+    partial class MigrationRelacionamentos2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,11 +26,11 @@ namespace Buylist.DataAccess.Migrations
 
             modelBuilder.Entity("Buylist.Domain.Compra", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CompraId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompraId"), 1L, 1);
 
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
@@ -45,7 +47,7 @@ namespace Buylist.DataAccess.Migrations
                     b.Property<decimal?>("Total")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CompraId");
 
                     b.HasIndex("LocalId");
 
@@ -54,11 +56,11 @@ namespace Buylist.DataAccess.Migrations
 
             modelBuilder.Entity("Buylist.Domain.Item", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ItemId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemId"), 1L, 1);
 
                     b.Property<int>("CompraId")
                         .HasColumnType("int");
@@ -75,7 +77,7 @@ namespace Buylist.DataAccess.Migrations
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ItemId");
 
                     b.HasIndex("CompraId");
 
@@ -86,11 +88,11 @@ namespace Buylist.DataAccess.Migrations
 
             modelBuilder.Entity("Buylist.Domain.Local", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("LocalId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LocalId"), 1L, 1);
 
                     b.Property<string>("Localizacao")
                         .HasColumnType("nvarchar(max)");
@@ -99,18 +101,18 @@ namespace Buylist.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("LocalId");
 
                     b.ToTable("TbLocal");
                 });
 
             modelBuilder.Entity("Buylist.Domain.Produto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProdutoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProdutoId"), 1L, 1);
 
                     b.Property<string>("CodigoBarras")
                         .HasMaxLength(20)
@@ -123,7 +125,7 @@ namespace Buylist.DataAccess.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProdutoId");
 
                     b.ToTable("TbProduto");
                 });
