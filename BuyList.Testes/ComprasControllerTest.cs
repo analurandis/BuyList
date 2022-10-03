@@ -1,20 +1,24 @@
-using Buylist.Api.Controllers;
-using Buylist.Common.Repository.Entity;
+﻿using Buylist.Api.Controllers;
 using Buylist.CommonRepository;
 using Buylist.Domain;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BuyList.Testes
 {
-    public class ProdutosControllerTest
+    public class ComprasControllerTest
     {
-        ProdutosController _controller;
-        IBuyListRepository<Produto, int> _servico;
+        ComprasController _controller;
+        IBuyListRepository<Compra, int> _servico;
 
-        public  ProdutosControllerTest()
+        public ComprasControllerTest()
         {
-            _servico = new ProdutoFake();
-            _controller = new ProdutosController(_servico);
+            _servico = new CompraFake();
+            _controller = new ComprasController(_servico);
         }
 
 
@@ -33,8 +37,8 @@ namespace BuyList.Testes
             // Act
             var okResult = _controller.Get().Result as OkObjectResult;
             // Assert
-            var items = Assert.IsType<List<Produto>>(okResult.Value);
-            Assert.Equal(4, items.Count);
+            var items = Assert.IsType<List<Compra>>(okResult.Value);
+            Assert.Equal(3, items.Count);
         }
     }
 }
