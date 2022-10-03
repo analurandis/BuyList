@@ -14,6 +14,6 @@ namespace Buylist.Domain
         public decimal Total { get; set; }
         public int CompraId { get; set; }
         public int ProdutoId { get; set; }
-        public Produto? Produto { get; set; }
+        public virtual Produto? Produto { get; set; }
     }
 }
