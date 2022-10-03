@@ -33,7 +33,7 @@ A  --Nx1 --> D[Local]
  - *Buylist.Domain* : Projeto que possui os domínios dos objetos
  - *Buylist.Repository* :  Projeto da implementação do CRUD para cada objeto necessário
 
-** Container **
+**Container**
  - Baixar a imagem do container SQL
 docker pull mcr.microsoft.com/mssql/server:2019-CU18-ubuntu-20.04
 
