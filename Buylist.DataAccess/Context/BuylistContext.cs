@@ -13,6 +13,7 @@ namespace Buylist.DataAccess.Context
 {
     public class BuylistContext : DbContext
     {
+        
         public DbSet<Compra> TbCompra { get; set; }
         public DbSet<Item> TbItem { get; set; }
         public DbSet<Local> TbLocal { get; set; }
