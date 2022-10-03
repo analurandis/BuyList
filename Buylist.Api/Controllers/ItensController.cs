@@ -12,8 +12,13 @@ namespace Buylist.Api.Controllers
     public class ItensController : ControllerBase
     {
 
-        private IBuyListRepository<Item, int> _repository = new ItemRepository(new BuylistContext());
-        private IBuyListRepository<Produto, int> _repositoryProduto = new ProdutoRepository(new BuylistContext());
+        private IBuyListRepository<Item, int> _repository;//= new ItemRepository(new BuylistContext());
+
+        public ItensController(IBuyListRepository<Item, int> repository)
+        {
+            this._repository = repository;
+        }
+
 
         [HttpGet]
         public IEnumerable<Item> Get()

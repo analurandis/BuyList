@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Buylist.Common.Repository.Entity
 {
-    public abstract class BuyListRepository<TEntity, TKey> : IBuyListRepository<TEntity, TKey>
+    public abstract class BuyListServiceRepository<TEntity, TKey> : IBuyListRepository<TEntity, TKey>
         where TEntity : class
     {
 
         private readonly DbContext _context;
 
-        public BuyListRepository(DbContext dbContext)
+        public BuyListServiceRepository(DbContext dbContext)
         {
             _context = dbContext;
         }

@@ -14,7 +14,7 @@ namespace Buylist.Api.Controllers
     {
         private readonly IBuyListRepository<Produto, int> _repository;
 
-        public ProdutoController(IBuyListRepository<Produto, int> repository)
+        public ProdutosController(IBuyListRepository<Produto, int> repository)
         {
             this._repository = repository;
 

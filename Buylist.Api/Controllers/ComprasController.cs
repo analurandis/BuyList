@@ -12,7 +12,7 @@ namespace Buylist.Api.Controllers
     public class ComprasController : ControllerBase
     {
 
-        private IBuyListRepository<Compra, int> _repository = new CompraRepository(new BuylistContext());
+        private IBuyListRepository<Compra, int> _repository;//= new CompraRepository(new BuylistContext());
 
         [HttpGet]
         public IEnumerable<Compra> Get()

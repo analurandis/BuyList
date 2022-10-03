@@ -11,8 +11,13 @@ namespace Buylist.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class LocaisController : ControllerBase 
-    { 
-        private IBuyListRepository<Local, int> _repository = new LocalRepository(new BuylistContext());
+    {
+        private IBuyListRepository<Local, int> _repository;
+
+        public LocaisController(IBuyListRepository<Local, int> repository)
+        {
+            this._repository = repository;
+        }
 
         [HttpGet]
         public IEnumerable<Local> Get()

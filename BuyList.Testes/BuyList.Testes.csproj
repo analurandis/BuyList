@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Buylist.Api\Buylist.Api.csproj" />
+    <ProjectReference Include="..\Buylist.CommonRepository\Buylist.CommonRepository.csproj" />
     <ProjectReference Include="..\Buylist.Repository\Buylist.Repository.csproj" />
   </ItemGroup>
 
