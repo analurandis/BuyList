@@ -12,7 +12,7 @@ namespace Buylist.Api.Controllers
     public class ItensController : ControllerBase
     {
 
-        private IBuyListRepository<Item, int> _repository;
+        private readonly IBuyListRepository<Item, int> _repository;
 
         public ItensController(IBuyListRepository<Item, int> repository)
         {

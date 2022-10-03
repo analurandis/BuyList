@@ -12,7 +12,7 @@ namespace Buylist.Api.Controllers
     public class ComprasController : ControllerBase
     {
 
-        private IBuyListRepository<Compra, int> _repository;
+        private readonly IBuyListRepository<Compra, int> _repository;
 
         public  ComprasController(IBuyListRepository<Compra, int> repository)
         {
