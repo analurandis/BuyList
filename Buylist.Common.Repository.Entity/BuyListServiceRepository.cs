@@ -21,7 +21,10 @@ namespace Buylist.Common.Repository.Entity
 
         public virtual TEntity ByKey(TKey key)
         {
-            return _context.Set<TEntity>().Find(key);
+            var retorno = _context.Set<TEntity>().Find(key);
+            return retorno;
+
+
         }
 
         public virtual void Delete(TEntity entity)
@@ -30,6 +33,7 @@ namespace Buylist.Common.Repository.Entity
             {
                 _context.Entry(entity).State = EntityState.Deleted;
                 _context.SaveChanges();
+    
             }
         }
 
@@ -37,18 +41,35 @@ namespace Buylist.Common.Repository.Entity
         {
             TEntity entity = ByKey(key);
             Delete(entity);
+            
         }
 
         public virtual void Insert(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
             _context.SaveChanges();
+
         }
 
         public virtual void Update(TEntity entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
+            try
+            {
+                _context.Entry(entity).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
+
+        public virtual void Dispose()
+        {
+            _context.Dispose();
+        }
+
     }
 }
