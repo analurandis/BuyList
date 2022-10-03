@@ -33,3 +33,23 @@ A  --Nx1 --> D[Local]
  - *Buylist.Domain* : Projeto que possui os domínios dos objetos
  - *Buylist.Repository* :  Projeto da implementação do CRUD para cada objeto necessário
 
+Baixar a imagem do container SQL
+docker pull mcr.microsoft.com/mssql/server:2019-CU18-ubuntu-20.04
+
+Criar o container SQLServer Ubuntu
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=9173-LASsols" -e "MSSQL_PID=Express" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-CU18-ubuntu-20.04
+
+Abir prompt de comando do SQL
+docker exec -it ID_DO_CONTAINER /opt/mssql-tools/bin/sqlcmd -S localhost -U sa
+
+Criação do Banco de Dados
+CREATE DATABASE buylist
+SELECT Name from sys.Databases
+GO
+
+
+ docker commit confident_carson buylistcontainer.azurecr.io/sqlserver/buylist:0.1.0
+ 
+ docker login
+ 
+ docker push buylistcontainer.azurecr.io/sqlserver/buylist:0.1.0
