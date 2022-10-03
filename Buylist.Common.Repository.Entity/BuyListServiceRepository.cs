@@ -14,41 +14,62 @@ namespace Buylist.Common.Repository.Entity
             _context = dbContext;
         }
 
-        public List<TEntity> All()
+        public virtual List<TEntity> All()
         {
             return _context.Set<TEntity>().ToList();
         }
 
-        public TEntity ByKey(TKey key)
+        public virtual TEntity ByKey(TKey key)
         {
-            return _context.Set<TEntity>().Find(key);
+            var retorno = _context.Set<TEntity>().Find(key);
+            return retorno;
+
+
         }
 
-        public void Delete(TEntity entity)
+        public virtual void Delete(TEntity entity)
         {
             if(entity != null)
             {
                 _context.Entry(entity).State = EntityState.Deleted;
                 _context.SaveChanges();
+    
             }
         }
 
-        public void DeleteByKey(TKey key)
+        public virtual void DeleteByKey(TKey key)
         {
             TEntity entity = ByKey(key);
             Delete(entity);
+            
         }
 
-        public void Insert(TEntity entity)
+        public virtual void Insert(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
             _context.SaveChanges();
+
         }
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
+            try
+            {
+                _context.Entry(entity).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
+
+        public virtual void Dispose()
+        {
+            _context.Dispose();
+        }
+
     }
 }

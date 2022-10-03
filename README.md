@@ -8,6 +8,8 @@ Banco de dados utilizado SQL Server
 
 ORM: Entity Framework Core 6.0.9
 
+EndPoint de acesso a API: https://randisbuylist.azurewebsites.net/swagger/index.html
+
 **Objetos Utilizados:**
  - Compra 
  - Item 
@@ -30,3 +32,4 @@ A  --Nx1 --> D[Local]
  - *Buylist.DataAccess* : Projeto que trata a comunição com o banco de dados (Code First)
  - *Buylist.Domain* : Projeto que possui os domínios dos objetos
  - *Buylist.Repository* :  Projeto da implementação do CRUD para cada objeto necessário
+

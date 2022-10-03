@@ -12,7 +12,7 @@ namespace Buylist.Api.Controllers
     [ApiController]
     public class LocaisController : ControllerBase 
     {
-        private IBuyListRepository<Local, int> _repository;
+        private readonly IBuyListRepository<Local, int> _repository;
 
         public LocaisController(IBuyListRepository<Local, int> repository)
         {

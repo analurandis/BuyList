@@ -47,6 +47,11 @@ namespace BuyList.Testes
             _compra.Remove(item);
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Insert(Compra entity)
         {
             entity.Id = GeraId();

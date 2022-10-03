@@ -18,6 +18,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
+{
+    builder.WithOrigins(
+        "https://localhost:5105/swagger",
+        "https://localhost:5105");
+}));
+
 
 builder.Services.AddSingleton<IBuyListRepository<Produto, int>>(new ProdutoRepository( new BuylistContext()));
 builder.Services.AddSingleton<IBuyListRepository<Item, int>>(new ItemRepository(new BuylistContext()));
@@ -33,7 +40,7 @@ var app = builder.Build();
     app.UseSwagger();
     app.UseSwaggerUI();
 //}
-
+app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();

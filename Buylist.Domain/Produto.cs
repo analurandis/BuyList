@@ -11,7 +11,5 @@ namespace Buylist.Domain
         public string? Nome {get;set;}   
         public string? CodigoBarras {get;set;}
         public string? Descricao { get; set; }
-
-        public virtual ICollection<Item>? Itens { get; set; }
     }
 }

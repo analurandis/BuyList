@@ -16,5 +16,15 @@ namespace Buylist.Repository
         {
             _context = dbContext;
         }
+
+        public override List<Item> All()
+        {
+            return _context.Set<Item>().Include(i => i.Produto).ToList();
+        }
+
+        public override Item ByKey(int key)
+        {
+            return _context.Set<Item>().Include(i => i.Produto).FirstOrDefault(i => i.Id == key);
+        }
     }
 }

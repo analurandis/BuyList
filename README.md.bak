@@ -3,8 +3,11 @@
 Projeto para captura de dados de compras salvando assim os valores gastos e os lugares de compra de cada item.
 
 Linguagem de Programação utilizada: C# com .net versão 6.0 
+
 Banco de dados utilizado SQL Server
+
 ORM: Entity Framework Core 6.0.9
+
 **Objetos Utilizados:**
  - Compra 
  - Item 
@@ -18,6 +21,7 @@ A[Compra] --1xN --> B[Item]
 B --Nx1 --> C[Produto]
 A  --Nx1 --> D[Local]
 ```
+
 **Projetos :**
 
  - *Buylist.Api* : Projeto referente a API 

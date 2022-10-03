@@ -1,6 +1,7 @@
 ﻿using Buylist.DataAccess.TypeConfigurations;
 using Buylist.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace Buylist.DataAccess.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=tcp:randisbuylist.database.windows.net,1433;Initial Catalog=buylist;Persist Security Info=False;User ID=randis;Password=9173!LASsols;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.EnableSensitiveDataLogging();
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
