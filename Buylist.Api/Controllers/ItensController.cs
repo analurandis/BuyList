@@ -12,39 +12,48 @@ namespace Buylist.Api.Controllers
     public class ItensController : ControllerBase
     {
 
-        private IBuyListRepository<Item, int> _repository = new ItemRepository(new BuylistContext());
-        private IBuyListRepository<Produto, int> _repositoryProduto = new ProdutoRepository(new BuylistContext());
+        private IBuyListRepository<Item, int> _repository;
+
+        public ItensController(IBuyListRepository<Item, int> repository)
+        {
+            this._repository = repository;
+        }
+
 
         [HttpGet]
-        public IEnumerable<Item> Get()
+        public ActionResult<IEnumerable<Item>> Get()
         {
-            return _repository.All();
+            return Ok( _repository.All());
         }
 
         [HttpGet("{id}")]
-        public Item Get(int id)
+        public ActionResult<Item> Get(int id)
         {
-            return _repository.ByKey(id);
+            return Ok( _repository.ByKey(id));
+
         }
 
         [HttpPost]
-        public void Post([FromBody] Item value)
+        public ActionResult Post([FromBody] Item value)
         {
             _repository.Insert(value);
+            return Ok();
         }
 
         // PUT api/<ProdutoController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Item value)
+        public ActionResult Put(int id, [FromBody] Item value)
         {
             _repository.Update(value);
+            return Ok();
         }
 
         // DELETE api/<ProdutoController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
             _repository.DeleteByKey(id);
+            return Ok();
         }
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Buylist.Repository
 {
-    public class CompraRepository : BuyListRepository<Compra, int>
+    public class CompraRepository : BuyListServiceRepository<Compra, int>
     {
         private DbContext _context;
         public CompraRepository(DbContext dbContext) : base(dbContext)

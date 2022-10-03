@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Buylist.Repository
 {
-    public class ItemRepository : BuyListRepository<Item, int>
+    public class ItemRepository : BuyListServiceRepository<Item, int>
     {
         private DbContext _context;
         public ItemRepository(DbContext dbContext) : base(dbContext)
