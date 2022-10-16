@@ -40,5 +40,6 @@ namespace BuyList.Testes
             var items = Assert.IsType<List<Compra>>(okResult.Value);
             Assert.Equal(3, items.Count);
         }
+
     }
 }

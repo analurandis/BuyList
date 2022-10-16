@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buylist.CommonRepository", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buylist.Repository", "Buylist.Repository\Buylist.Repository.csproj", "{9A5B4FE5-144B-43C5-9B5D-F21E8A2245A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyList.Testes", "BuyList.Testes\BuyList.Testes.csproj", "{FE2A49D5-DF7B-49E8-AE30-71CF7FA70AED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuyList.Testes", "BuyList.Testes\BuyList.Testes.csproj", "{FE2A49D5-DF7B-49E8-AE30-71CF7FA70AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buylist.App", "Buylist.App\Buylist.App.csproj", "{36491BE9-D082-46F8-BB6A-73548D0192F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,12 @@ Global
 		{FE2A49D5-DF7B-49E8-AE30-71CF7FA70AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE2A49D5-DF7B-49E8-AE30-71CF7FA70AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE2A49D5-DF7B-49E8-AE30-71CF7FA70AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36491BE9-D082-46F8-BB6A-73548D0192F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36491BE9-D082-46F8-BB6A-73548D0192F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36491BE9-D082-46F8-BB6A-73548D0192F5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{36491BE9-D082-46F8-BB6A-73548D0192F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36491BE9-D082-46F8-BB6A-73548D0192F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36491BE9-D082-46F8-BB6A-73548D0192F5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
